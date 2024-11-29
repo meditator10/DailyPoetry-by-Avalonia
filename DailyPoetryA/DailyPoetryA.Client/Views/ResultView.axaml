@@ -1,0 +1,52 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="DailyPoetryA.Client.Views.ResultView"
+             xmlns:i="using:Avalonia.Xaml.Interactivity"
+             xmlns:ia="using:Avalonia.Xaml.Interactions.Core"
+             xmlns:lc="using:DailyPoetryA.Client.Converters"
+             xmlns:ais="using:AvaloniaInfiniteScrolling"
+             DataContext="{Binding ResultViewModel, Source={StaticResource ServiceLocator}}"
+             x:Name="TheResultView">
+
+    <UserControl.Resources>
+        <lc:PoetryToStringConverter x:Key="PoetryToString"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ais:AvaloniaInfiniteScrollControl Grid.Row="0"
+                                           ItemsSource="{Binding PoetryCollection}"
+                                           Margin="12,12,12,0">
+            <ais:AvaloniaInfiniteScrollControl.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="0,0,0,12"
+                                Background="Transparent">
+                        <i:Interaction.Behaviors>
+                            <ia:EventTriggerBehavior EventName="Tapped">
+                                <ia:InvokeCommandAction
+                                    Command="{Binding DataContext.ShowPoetryCommand, ElementName=TheResultView}"
+                                    CommandParameter="{Binding}">
+                                </ia:InvokeCommandAction>
+                            </ia:EventTriggerBehavior>
+                        </i:Interaction.Behaviors>
+                        <TextBlock Text="{Binding Name}"
+                                   FontWeight="Bold" />
+                        <TextBlock
+                            Text="{Binding Converter={StaticResource PoetryToString}}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ais:AvaloniaInfiniteScrollControl.ItemTemplate>
+        </ais:AvaloniaInfiniteScrollControl>
+        <TextBlock Grid.Row="1"
+                   Text="{Binding Status}"
+                   Margin="12"
+                   HorizontalAlignment="Center">
+        </TextBlock>
+    </Grid>
+</UserControl>

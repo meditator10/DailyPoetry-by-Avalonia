@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "5xSENts3ZwWzhGBcmsijo/F1dZpLwW1rAGFTmHHn0uI67nwobQeCVGqF6vTPRNnsJXBS8K+4jXmp7/8gDwRi/w==",
+  "success": true,
+  "projectFilePath": "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\Dpa.Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\avaloniainfinitescrolling.collection\\1.0.1\\avaloniainfinitescrolling.collection.1.0.1.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\sqlite-net-pcl\\1.9.172\\sqlite-net-pcl.1.9.172.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\sqlitepclraw.bundle_green\\2.1.2\\sqlitepclraw.bundle_green.2.1.2.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\sqlitepclraw.core\\2.1.2\\sqlitepclraw.core.2.1.2.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.2\\sqlitepclraw.lib.e_sqlite3.2.1.2.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.2\\sqlitepclraw.provider.e_sqlite3.2.1.2.nupkg.sha512",
+    "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

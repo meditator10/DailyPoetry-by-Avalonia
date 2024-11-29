@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="poetrydb.sqlite3" />
+    <None Remove="todayImage.bin" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="poetrydb.sqlite3">
+		<LogicalName>poetrydb.sqlite3</LogicalName>
+    </EmbeddedResource>
+	<EmbeddedResource Include="todayImage.bin">
+		<LogicalName>todayImage.bin</LogicalName>
+	</EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AvaloniaInfiniteScrolling.Collection" Version="1.0.1" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
+  </ItemGroup>
+
+</Project>

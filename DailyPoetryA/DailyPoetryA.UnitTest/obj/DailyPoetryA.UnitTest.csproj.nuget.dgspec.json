@@ -1,0 +1,182 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\personal\\Avalonia\\DailyPoetryA\\DailyPoetryA.UnitTest\\DailyPoetryA.UnitTest.csproj": {}
+  },
+  "projects": {
+    "C:\\personal\\Avalonia\\DailyPoetryA\\DailyPoetryA.UnitTest\\DailyPoetryA.UnitTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\personal\\Avalonia\\DailyPoetryA\\DailyPoetryA.UnitTest\\DailyPoetryA.UnitTest.csproj",
+        "projectName": "DailyPoetryA.UnitTest",
+        "projectPath": "C:\\personal\\Avalonia\\DailyPoetryA\\DailyPoetryA.UnitTest\\DailyPoetryA.UnitTest.csproj",
+        "packagesPath": "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\",
+        "outputPath": "C:\\personal\\Avalonia\\DailyPoetryA\\DailyPoetryA.UnitTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\VS\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DTMLLUAdminUser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\DTMLLUAdminUser\\Desktop\\PXASourceCode\\LFCToolKit.1.0.1.7\\LFCToolKit.1.0.1.7": {},
+          "C:\\Users\\DTMLLUAdminUser\\Desktop\\PXASourceCode\\LFCToolKit.1.0.1.7\\mbv-client-utility.1.0.3.1014": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\Dpa.Library.csproj": {
+                "projectPath": "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\Dpa.Library.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.72, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\Dpa.Library.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\Dpa.Library.csproj",
+        "projectName": "Dpa.Library",
+        "projectPath": "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\Dpa.Library.csproj",
+        "packagesPath": "C:\\Users\\DTMLLUAdminUser\\.nuget\\packages\\",
+        "outputPath": "C:\\personal\\Avalonia\\DailyPoetryA\\Dpa.Library\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\VS\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DTMLLUAdminUser\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Users\\DTMLLUAdminUser\\Desktop\\PXASourceCode\\LFCToolKit.1.0.1.7\\LFCToolKit.1.0.1.7": {},
+          "C:\\Users\\DTMLLUAdminUser\\Desktop\\PXASourceCode\\LFCToolKit.1.0.1.7\\mbv-client-utility.1.0.3.1014": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AvaloniaInfiniteScrolling.Collection": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.3.2, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
