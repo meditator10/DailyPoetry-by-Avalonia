@@ -1,0 +1,12 @@
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\bin\Release\net8.0\Dpa.Library.deps.json
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\bin\Release\net8.0\Dpa.Library.dll
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\bin\Release\net8.0\Dpa.Library.pdb
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.csproj.AssemblyReference.cache
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.GeneratedMSBuildEditorConfig.editorconfig
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.AssemblyInfoInputs.cache
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.AssemblyInfo.cs
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.csproj.CoreCompileInputs.cache
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.dll
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\refint\Dpa.Library.dll
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\Dpa.Library.pdb
+C:\personal\Avalonia\DailyPoetryA\Dpa.Library\obj\Release\net8.0\ref\Dpa.Library.dll
