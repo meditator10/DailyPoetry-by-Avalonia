@@ -1,64 +1,11 @@
-# 1¡¢·şÎñ¶¨Î»Æ÷Ä£Ê½
-½«ViewÓëViewModel¹ØÁªÆğÀ´£¬ĞèÒªÒ»¸öÖĞ¼äÈË·şÎñ¶¨Î»Æ÷£¨ServiceLocator£©
-Ê×ÏÈ°ÑServiceLocator×¢²á³ÉÒ»¸ö×ÊÔ´£¬½Ó×Å°ÑViewmodelÍ¨¹ıÒÀÀµ×¢ÈëµÄ·½Ê½×¢²áµ½ServiceLocatorÀïÃæ£¬È»ºó¾Í¿ÉÒÔÍ¨¹ıGetService·½·¨_serviceProvider.GetService()È¡µ½ViewmodelÊµÀı£¬ÕâÑùViewÍ¨¹ıDataContextµÄSourse¾ÍÄÜ°ó¶¨ServiceLocator£¬²¢ÕÒµ½ViewModel¡£
-
-ServiceLocatorºÍDependencyInjectionÊÇÊµÏÖIoCµÄÁ½ÖÖ²»Í¬·½Ê½¡£µÚÈıÖÖ·½Ê½ÊÇFactoryPattern¡£ServiceLocatorÇ¿µ÷Ô¤ÏÈ¶¨Òå×ÊÔ´Ó³Éä£¬¸ôÀë×ÊÔ´µÄ¾ßÌåÊµÏÖ£¬Ò²¾ÍÊÇÔÚËùÊµÏÖÀàµÄÍâ²¿Ä³´¦È¥×¢²á·şÎñ¡£DependencyInjectionÇ¿µ÷¸¨Öú´´½¨ºÍ¹ÜÀí¶ÔÏó£¬ÔÚ´´½¨¶ÔÏóÊ±²ÉÓÃ¹¹Ôìº¯Êı×¢ÈëºÍÊôĞÔSetter×¢ÈëµÈ·½Ê½¡£
-Ãû×Ö²»Í¬£¬µ«¶¼×¨×¢ÓÚ½â¾ö¸ôÀëÒÀÀµ¶ÔÏóµÄÎÊÌâ¡£ÒÀÀµÏî±»¸ôÀëÁË£¬Ôò×öUTµÈ¾Í·½±ã¶àÁË£¬Í¬Ê±Ò²Ê¹ÅäÖÃ»òÔËĞĞÊ±Ö¸¶¨¡¢Ìæ»»¶ÔÏóÊµÏÖ³ÉÎª¿ÉÄÜ¡£
-
-·şÎñ¶¨Î»Æ÷Ä£Ê½½éÉÜºÍÆÀÂÛÇøµÄÌÖÂÛ
-
-# 2¡¢Avalonia.Xaml.Behaviors
-Ê¹ÓÃÇ°¼ÇµÃÉùÃ÷xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
-×÷ÓÃ£ºµ±Ò»¸öÀàµÄ¹¦ÄÜÒÑ¾­È·¶¨ÁË£¬²»¿É¸ü¸Ä£¬µ«Ëæ×Å°æ±¾µÄµü´úĞèÒªÌí¼ÓĞÂµÄ·½·¨À´À©Õ¹¹¦ÄÜ£¬BehaviorÌá¹©Ò»ÖÖ¿ÉÄÜĞÔ£¬ÔÚÔ­ÓĞµÄ»ù´¡ÉÏ¸øÌØ¶¨ÀàÌí¼ÓĞÂµÄ·½·¨¡£
-
-´ËÏîÄ¿ÖĞ£¬ÒòÎªÊı¾İÔÚDaliyPoetryA.LibraryÀï£¬ÏÔÊ¾Êı¾İÔÚUI²ãDaliyPoetryA.ClientÀï£¬ÕâÀï¶ÔÓÚ²»ÄÜ»ùÓÚCommand°ó¶¨µÄ¿Ø¼şÊ±£¬Ö»ÄÜÍ¨¹ı´«Í³µÄÊÂ¼şÀ´×¢²á£¬Í¨¹ıÊÂ¼şÀ´´¥·¢ÃüÁîÊµÏÖ
-    <i:Interaction.Behaviors>
-        <!-- InitializedÊÇxamlÒ³Ãæ×Ô´øµÄÊÂ¼ş£¬ÓÃÓÚ×Ô¶¯³õÊ¼»¯Ò³Ãæ -->
-        <EventTriggerBehavior EventName ="Initialized">
-			<InvokeCommandAction Command ="{Binding OnInitializedCommand}"/>
-        </EventTriggerBehavior>
-    </i:Interaction.Behaviors>
-# 3¡¢Êı¾İ°ó¶¨Ô­Àí
-¶ÔÓÚVMÀïÈç¹ûÊÇµ¥¶ÀµÄÊôĞÔ£ºViewModel²ã»áµ÷ÓÃSetPropertyº¯ÊıÀ´¸Ä±äÊôĞÔÖµ£¬½Ó×Åµ÷ÓÃOnPropertyChangedº¯Êı£¬Í¬Ê±»á´¥·¢PropertyChangedÊÂ¼ş£¬Í¨ÖªView²ãÊı¾İ·¢ÉúÁË¸Ä±ä
-¶ÔÓÚ¼¯ºÏ£¬ÓĞ×¨ÃÅµÄObservableCollection£¬µ×²ãÊµÏÖÁËViewModel²ãÊı¾İ¸Ä±ä×Ô¶¯Í¨ÖªView²ã 
-```C#
-public abstract class ObservableObject : INotifyPropertyChanged, INotifyPropertyChanging
-{
-  public event PropertyChangedEventHandler? PropertyChanged;
-  public event PropertyChangingEventHandler? PropertyChanging;
-
-  protected bool SetProperty<T>(
-      [NotNullIfNotNull("newValue")] ref T field,
-      T newValue,
-      IEqualityComparer<T> comparer,
-      [CallerMemberName] string? propertyName = null)
-  {
-      CommunityToolkit.Mvvm.ArgumentNullException.ThrowIfNull((object) comparer, nameof (comparer));
-      if (comparer.Equals(field, newValue))
-        return false;
-      this.OnPropertyChanging(propertyName);
-      field = newValue;
-      this.OnPropertyChanged(propertyName);
-      return true;
-  }
-}
-
-public interface INotifyPropertyChanged
-{
-    /// <summary>Occurs when a property value changes.</summary>
-    event PropertyChangedEventHandler? PropertyChanged;
-}
-```
-Ãû³Æ¹æ·¶£º³éÏóÀàÃûÓ¦¸ÃÊÇÃû´Ê£¬½Ó¿ÚÃûÓ¦¸ÃÊÇĞÎÈİ´Ê»ò¸±´Ê£¬ÕâÊÇÎ¢ÈíÉè¼ÆÊÖ²áµÄÍÆ¼öÃüÃûÔ­ÔòÖ®Ò»
-
-# 4¡¢·ÃÎÊWeb·şÎñ
-## 4.1 Ê«´Ê(ÎÄ±¾)Êı¾İ
-## 4.2 Í¼Æ¬Êı¾İ
-# 5¡¢µ¼º½»úÖÆ
-## 5.1 ³õÊ¼»¯½çÃæµ¼º½
-³õÊ¼»¯½çÃæÍ¨¹ıInitializationViewModelºÍInitializationViewÀ´ÊµÏÖ¡£
-µ«ÊÇ³ĞÔØÕû¸öUIĞèÒªÒ»¸öÔØÌå£¬Õâ¸öÔØÌå¾ÍÊÇMainWindowViewModelºÍMainWindow£¬¶øÇÒÕâÀïÍ¨¹ı´´½¨·şÎñ RootNavigationService£¨ÔÚÖ÷½çÃæMainWindowViewModelÀïÃæÓĞÒ»¸öContentÊôĞÔ£¬Í¨¹ıContentÖ¸¶¨µ¼º½µ½InitializationViewÒ³ÃæÈ¥ÏÔÊ¾£©
-Èç¹ûAPPÒÑ¾­³õÊ¼»¯£¬ÄÇÃ´Ö±½Óµ¼º½µ½Ò»¼¶²Ëµ¥µÄ½ñÈÕÍÆ¼ö½çÃæ
+# 1ã€è®¿é—®WebæœåŠ¡
+## 1.1 è¯—è¯(æ–‡æœ¬)æ•°æ®
+## 1.2 å›¾ç‰‡æ•°æ®
+# 2ã€å¯¼èˆªæœºåˆ¶
+## 2.1 åˆå§‹åŒ–ç•Œé¢å¯¼èˆª
+åˆå§‹åŒ–ç•Œé¢é€šè¿‡InitializationViewModelå’ŒInitializationViewæ¥å®ç°ã€‚
+ä½†æ˜¯æ‰¿è½½æ•´ä¸ªUIéœ€è¦ä¸€ä¸ªè½½ä½“ï¼Œè¿™ä¸ªè½½ä½“å°±æ˜¯MainWindowViewModelå’ŒMainWindowï¼Œè€Œä¸”è¿™é‡Œé€šè¿‡åˆ›å»ºæœåŠ¡ RootNavigationServiceï¼ˆåœ¨ä¸»ç•Œé¢MainWindowViewModelé‡Œé¢æœ‰ä¸€ä¸ªContentå±æ€§ï¼Œé€šè¿‡ContentæŒ‡å®šå¯¼èˆªåˆ°InitializationViewé¡µé¢å»æ˜¾ç¤ºï¼‰
+å¦‚æœAPPå·²ç»åˆå§‹åŒ–ï¼Œé‚£ä¹ˆç›´æ¥å¯¼èˆªåˆ°ä¸€çº§èœå•çš„ä»Šæ—¥æ¨èç•Œé¢
 ```C#
 public class MainWindowViewModel : ViewModelBase
 {
@@ -76,7 +23,7 @@ public class MainWindowViewModel : ViewModelBase
         OnInitializedCommand = new RelayCommand(OnInitialized);
     }
 
-    // ×¢Òâ£ºÕâÀï²Î¿¼ÁËAvalonia¹Ù·½Ê¾Àı£¬ÔÚViewModelÀï°üº¬Ò»¸öViewModel
+    // æ³¨æ„ï¼šè¿™é‡Œå‚è€ƒäº†Avaloniaå®˜æ–¹ç¤ºä¾‹ï¼Œåœ¨ViewModelé‡ŒåŒ…å«ä¸€ä¸ªViewModel
     private ViewModelBase _content;
     public ViewModelBase Content
     {
@@ -99,13 +46,13 @@ public class MainWindowViewModel : ViewModelBase
     }
 }
 ```
-## 5.2 Ò»¼¶²Ëµ¥µ¼º½
-£¨Ã»ÓĞÕ»£¬ÀàËÆµ¼º½À¸Ö±½ÓÇĞ»»£©
-ÕâÀïÓĞÈı¸ö½çÃæ£º
-TodayViewModelºÍTodayView(½ñÈÕÍÆ¼ö)£º»ñÈ¡bing·şÎñÆ÷Ã¿ÈÕÍ¼Æ¬¡¢½ñÈÕÊ«´Ê·şÎñÆ÷Ã¿ÈÕÊ«´Ê
-QueryViewModelºÍQueryView(Ê«´ÊËÑË÷)£ºÓÃ»§ËÑË÷Ò³
-FavoriteViewModelºÍFavoriteView(Ê«´ÊÊÕ²Ø)£ºÓÃ»§ÊÕ²ØÒ³
-ÕâÀïÒ²ÓĞÒ»¸öÔØÌåMainViewModelºÍMainView£¬Í¨¹ı´´½¨·şÎñMenuNavigationService£¨ÔÚ±êÇ©µ¼º½½çÃæMainViewModelÀïÃæÒ²¶¨ÒåÁËÒ»¸öContentÊôĞÔ£¬Í¨¹ıView²ãµÄContentControl°ó¶¨µ½Content£©
+## 2.2 ä¸€çº§èœå•å¯¼èˆª
+ï¼ˆæ²¡æœ‰æ ˆï¼Œç±»ä¼¼å¯¼èˆªæ ç›´æ¥åˆ‡æ¢ï¼‰
+è¿™é‡Œæœ‰ä¸‰ä¸ªç•Œé¢ï¼š
+TodayViewModelå’ŒTodayView(ä»Šæ—¥æ¨è)ï¼šè·å–bingæœåŠ¡å™¨æ¯æ—¥å›¾ç‰‡ã€ä»Šæ—¥è¯—è¯æœåŠ¡å™¨æ¯æ—¥è¯—è¯
+QueryViewModelå’ŒQueryView(è¯—è¯æœç´¢)ï¼šç”¨æˆ·æœç´¢é¡µ
+FavoriteViewModelå’ŒFavoriteView(è¯—è¯æ”¶è—)ï¼šç”¨æˆ·æ”¶è—é¡µ
+è¿™é‡Œä¹Ÿæœ‰ä¸€ä¸ªè½½ä½“MainViewModelå’ŒMainViewï¼Œé€šè¿‡åˆ›å»ºæœåŠ¡MenuNavigationServiceï¼ˆåœ¨æ ‡ç­¾å¯¼èˆªç•Œé¢MainViewModelé‡Œé¢ä¹Ÿå®šä¹‰äº†ä¸€ä¸ªContentå±æ€§ï¼Œé€šè¿‡Viewå±‚çš„ContentControlç»‘å®šåˆ°Contentï¼‰
 ```C#
 public class MainViewModel : ViewModelBase
 {
@@ -127,7 +74,7 @@ public class MainViewModel : ViewModelBase
         private set => SetProperty(ref _title, value);
     }
 
-    // ±êÖ¾Î»£º¿ØÖÆµ¼º½À¸µÄÒş²ØºÍÕ¹¿ª
+    // æ ‡å¿—ä½ï¼šæ§åˆ¶å¯¼èˆªæ çš„éšè—å’Œå±•å¼€
     private bool _isPaneOpen;
     public bool IsPaneOpen
     {
@@ -140,7 +87,7 @@ public class MainViewModel : ViewModelBase
     public RelayCommand ClosePaneCommand { get; }
     public void ClosePane() => IsPaneOpen = false;
 
-    // ×¢Òâ£ºÕâÀï²Î¿¼ÁËAvalonia¹Ù·½Ê¾Àı£¬ÔÚViewModelÀï°üº¬Ò»¸öViewModel
+    // æ³¨æ„ï¼šè¿™é‡Œå‚è€ƒäº†Avaloniaå®˜æ–¹ç¤ºä¾‹ï¼Œåœ¨ViewModelé‡ŒåŒ…å«ä¸€ä¸ªViewModel
     private ViewModelBase _content;
     public ViewModelBase Content
     {
@@ -148,15 +95,15 @@ public class MainViewModel : ViewModelBase
         private set => SetProperty(ref _content, value);
     }
 
-    // ÓÃÒ»¸öObservableCollectionÎ¬»¤ÄÚÈİµ¼º½µÄÈëÕ»³öÕ»
+    // ç”¨ä¸€ä¸ªObservableCollectionç»´æŠ¤å†…å®¹å¯¼èˆªçš„å…¥æ ˆå‡ºæ ˆ
     public ObservableCollection<ViewModelBase> ContentStack { get; } = [];
-    // ÈëÕ»(½øÈëµ½ÏÂÒ»Ò³)
+    // å…¥æ ˆ(è¿›å…¥åˆ°ä¸‹ä¸€é¡µ)
     public void PushContent(ViewModelBase content)
     {
         Content = content;
         ContentStack.Insert(0, Content);
     }
-    // ³öÕ»(ÍË³öµ½ÉÏÒ»Ò³)
+    // å‡ºæ ˆ(é€€å‡ºåˆ°ä¸Šä¸€é¡µ)
     public RelayCommand GoBcakCommand { get; }
     public void GoBack()
     {
@@ -191,30 +138,31 @@ public class MainViewModel : ViewModelBase
     }
 }
 ```
-ps£ºView²ãÓÃµ½ÁËµÚÈı·½×é¼şProjektanker.Icons.Avalonia.FontAwesomeÈ¥ÏÔÊ¾Í¼±ê
-## 5.3 ¶ş¼¶ÄÚÈİµ¼º½
-£¨ÓĞÕ»µÄ£¬¿ÉÒÔ·µ»ØÉÏÒ»½çÃæ£©£¨¿¼ÂÇ´«²Î£©
-ÓĞÈı¸ö½çÃæ£º
-TodayDetailViewModelºÍTodayDetailView£º
-ResultViewModelºÍResultView£º
-DetailViewModelºÍDetailView£º
-ÓÉ¸÷×ÔµÄ½çÃæ·Ö±ğµ¼º½µ½¸÷×ÔµÄ¶ş¼¶ÄÚÈİÒ³£º
+psï¼šViewå±‚ç”¨åˆ°äº†ç¬¬ä¸‰æ–¹ç»„ä»¶Projektanker.Icons.Avalonia.FontAwesomeå»æ˜¾ç¤ºå›¾æ ‡
+## 2.3 äºŒçº§å†…å®¹å¯¼èˆª
+ï¼ˆæœ‰æ ˆçš„ï¼Œå¯ä»¥è¿”å›ä¸Šä¸€ç•Œé¢ï¼‰ï¼ˆè€ƒè™‘ä¼ å‚ï¼‰
+æœ‰ä¸‰ä¸ªç•Œé¢ï¼š
+TodayDetailViewModelå’ŒTodayDetailViewï¼š
+ResultViewModelå’ŒResultViewï¼š
+DetailViewModelå’ŒDetailViewï¼š
+ç”±å„è‡ªçš„ç•Œé¢åˆ†åˆ«å¯¼èˆªåˆ°å„è‡ªçš„äºŒçº§å†…å®¹é¡µï¼š
 
-## 5.4 µ¼º½×Ü½á
-´óÌåÓĞÈıÖÖ·½Ê½ÊµÏÖµ¼º½
-1¡¢ÔØÌå£ºÕâÈıÖÖ·½Ê½¶¼ĞèÒªÒÀÀµÒ»¸öÔØÌå(ÖĞ¼äÈË)
+## 2.4 å¯¼èˆªæ€»ç»“
+å¤§ä½“æœ‰ä¸‰ç§æ–¹å¼å®ç°å¯¼èˆª
+1ã€è½½ä½“ï¼šè¿™ä¸‰ç§æ–¹å¼éƒ½éœ€è¦ä¾èµ–ä¸€ä¸ªè½½ä½“(ä¸­é—´äºº)
 1. TabControl+TabItem
 2. Frame+Page
 3. ContentControl+UserControl
-2¡¢Ó³Éä£ºµ¼º½»áÓĞÒ»¸öNavigationTo·½·¨£¬ËüµÄ²ÎÊıÓ¦¸Ã»ùÓÚView»¹ÊÇViewModelÈ¥µ¼º½
-1. Url                      ¡ª¡ª¡ª¡ª¡ª¡ªView
-2. Page					    ¡ª¡ª¡ª¡ª¡ª¡ªView
-3. PageViewModel			¡ª¡ª¡ª¡ª¡ª¡ªViewModel¡ª¡ªView
-4. typeof£¨PageViewModel£©	¡ª¡ª¡ª¡ª¡ª¡ªViewModel¡ª¡ªView
-Èç¹ûÊÇ»ùÓÚViewµÄ£¬ÄÇÃ´¿ÉÒÔÖ±½ÓäÖÈ¾½çÃæ£¬Èç¹ûÊÇ»ùÓÚViewModelµÄ£¬ĞèÒªÏÈÕÒµ½¶ÔÓ¦µÄView£¬ÔÙÈ¥äÖÈ¾½çÃæ
-1. ¿ÉÒÔÔÚViewµÄ¹¹Ôìº¯ÊıÖĞÖ±½ÓÊµÀı»¯ViewModel£¬»òÕß½«DataContext°ó¶¨µ½ViewModel
-2. ContentControlµÄContentÊôĞÔ°ó¶¨µ½ViewModel£¬²¢Í¨¹ıswitch caseÓëview½¨Á¢ÁªÏµ
-3. ContentControlµÄContentÊôĞÔ°ó¶¨µ½ViewModel£¬ºóÃæÍ¨¹ıDataTemplateµÄDataType½«ViewModelÓëView½¨Á¢ÁªÏµ
+2ã€æ˜ å°„ï¼šå¯¼èˆªä¼šæœ‰ä¸€ä¸ªNavigationToæ–¹æ³•ï¼Œå®ƒçš„å‚æ•°åº”è¯¥åŸºäºViewè¿˜æ˜¯ViewModelå»å¯¼èˆª
+1. Url                      	â€”â€”â€”â€”â€”â€”View
+2. Page				â€”â€”â€”â€”â€”â€”View
+3. PageViewModel		â€”â€”â€”â€”â€”â€”ViewModelâ€”â€”View
+4. typeofï¼ˆPageViewModelï¼‰	â€”â€”â€”â€”â€”â€”ViewModelâ€”â€”View
+å¦‚æœæ˜¯åŸºäºViewçš„ï¼Œé‚£ä¹ˆå¯ä»¥ç›´æ¥æ¸²æŸ“ç•Œé¢ï¼Œå¦‚æœæ˜¯åŸºäºViewModelçš„ï¼Œéœ€è¦å…ˆæ‰¾åˆ°å¯¹åº”çš„Viewï¼Œå†å»æ¸²æŸ“ç•Œé¢
+1. å¯ä»¥åœ¨Viewçš„æ„é€ å‡½æ•°ä¸­ç›´æ¥å®ä¾‹åŒ–ViewModelï¼Œæˆ–è€…å°†DataContextç»‘å®šåˆ°ViewModel
+2. ContentControlçš„Contentå±æ€§ç»‘å®šåˆ°ViewModelï¼Œå¹¶é€šè¿‡switch caseä¸viewå»ºç«‹è”ç³»
+3. ContentControlçš„Contentå±æ€§ç»‘å®šåˆ°ViewModelï¼Œåé¢é€šè¿‡DataTemplateçš„DataTypeå°†ViewModelä¸Viewå»ºç«‹è”ç³»
+```xml
     <ContentControl Content="{Binding CurrentViewModel}" >
         <ContentControl.Resources>
             <DataTemplate DataType="{x:Type vms:HomeViewModel}">
@@ -225,15 +173,17 @@ DetailViewModelºÍDetailView£º
             </DataTemplate>
         </ContentControl.Resources>
     </ContentControl>
-4. ÔÚIoCÖĞ×¢²á£¬´ËÊ±View¾ÍÊÇÓĞ²Î¹¹Ôì£¬ÔÚÊµÀı»¯µÄÊ±ºòĞèÒª´«Ò»¸öViewModel
-5. Í¨¹ı¸ü¸ÄÃû³ÆµÄ×Ö·û´®Ö±½ÓÓ³Éä£¬±ÈÈçAvaloniaµÄViewLocator¡¢PrismµÄViewModelLocator
-3¡¢·şÎñ£º
-1. ´¿UIÊµÏÖ
-2. µ¥Àı+IoC×¢Èë
+```
+5. åœ¨IoCä¸­æ³¨å†Œï¼Œæ­¤æ—¶Viewå°±æ˜¯æœ‰å‚æ„é€ ï¼Œåœ¨å®ä¾‹åŒ–çš„æ—¶å€™éœ€è¦ä¼ ä¸€ä¸ªViewModel
+6. é€šè¿‡æ›´æ”¹åç§°çš„å­—ç¬¦ä¸²ç›´æ¥æ˜ å°„ï¼Œæ¯”å¦‚Avaloniaçš„ViewLocatorã€Prismçš„ViewModelLocator
+3ã€æœåŠ¡ï¼š
+1. çº¯UIå®ç°
+2. å•ä¾‹+IoCæ³¨å…¥
 3. Messager
-Sean's demo
-1¡¢ÔØÌå£ºContentControl+UserControl
-2¡¢Ó³Éä£ºContentControlµÄContentÊôĞÔ°ó¶¨µ½ViewModel£¬ºóÃæÍ¨¹ıDataTemplateµÄDataType½«ViewModelÓëView½¨Á¢ÁªÏµ
+## 2.5 Sean's demo
+1ã€è½½ä½“ï¼šContentControl+UserControl
+2ã€æ˜ å°„ï¼šContentControlçš„Contentå±æ€§ç»‘å®šåˆ°ViewModelï¼Œåé¢é€šè¿‡DataTemplateçš„DataTypeå°†ViewModelä¸Viewå»ºç«‹è”ç³»
+```xml
 <ContentControl Content="{Binding CurrentViewModel}">
 	<ContentControl.Resources>
 		<DataTemplate DataType="{x:Type vm:LoginViewModel}">
@@ -244,8 +194,8 @@ Sean's demo
 		</DataTemplate>
 	</ContentControl.Resources>
 </ContentControl>
-3¡¢·şÎñ£ºµ¥Àı+IoC×¢Èë
-
+```
+3ã€æœåŠ¡ï¼šå•ä¾‹+IoCæ³¨å…¥
 ```C#
 public class NavigationService
 {
@@ -262,7 +212,7 @@ public class NavigationService
     }
     public event Action? ViewModelChanged;
 	
-    // ¸Ä½ø£ºÍ¨¹ı·ºĞÍ£¬Ö±½ÓÈ¥ServiceÒª¶ÔÓ¦µÄViewModel£¬¶ø²»ÊÇ¸ù¾İ´«ÈëµÄ²ÎÊıÀ´»ñÈ¡
+    // æ”¹è¿›ï¼šé€šè¿‡æ³›å‹ï¼Œç›´æ¥å»Serviceè¦å¯¹åº”çš„ViewModelï¼Œè€Œä¸æ˜¯æ ¹æ®ä¼ å…¥çš„å‚æ•°æ¥è·å–
     public void NavigateTo<T>() where T : ViewModelBase => 
         ViewModel = App.Current.Services.GetService<T>();
 }
@@ -297,7 +247,6 @@ public partial class App : Application
     }
 }
 ```
-
-# 6¡¢ÅúÁ¿ÏÔÊ¾Êı¾İ
-## 6.1 ÏÔÊ¾Model
-## 6.2 ÏÔÊ¾ViewModel
+# 3ã€æ‰¹é‡æ˜¾ç¤ºæ•°æ®
+## 3.1 æ˜¾ç¤ºModel
+## 3.2 æ˜¾ç¤ºViewModel
